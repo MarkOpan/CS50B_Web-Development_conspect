@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dom1</title>
+    </head>
+    <body>
+        <form id="form">
+            <input id="name" placeholder="Name" type="text"/>
+            <input type="submit"/>
+        </form>
+        <script>
+            document.getElementById('form').onsubmit = function() {
+                alert('hello, ' + document.getElementById('name').value + '!');
+                return false;
+            };
+        </script>
+    </body>
+</html>

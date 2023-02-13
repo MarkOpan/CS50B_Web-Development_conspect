@@ -1,0 +1,49 @@
+<!--A form with client-side validation added & no data is sent to backend
+br/ - is used for line breaks-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form1</title>
+    </head>
+    <body>
+        <form>
+            Email: <input name="email" type="text"/>
+            <br/>
+            Password: <input name="password" type="password"/>
+            <br/>
+            Password(again): <input name="confirmation" type="password"/>
+            <br/>
+            I agree to the Terms & Conditions: <input name="agreement" type="checkbox"/>
+            <br/><br/>
+            <input type="submit" value="Register"/>
+        </form>
+        <script>
+            var form = document.getElementById('form');
+            form.onsubmit = function()
+            {
+                if (form.email.value == '')
+                {
+                    alert('You must provide email address');
+                    return false;
+                }
+                else if (form.password.value == '')
+                {
+                    alert ('You must provide password');
+                    return false;
+                }
+                else if (form.password.value != form.confirmation.value)
+                {
+                    alert('Passwords do not match');
+                    return false;
+                }
+                else if (!form.agreement.checked)
+                {
+                    alert('You must agree to Terms & Conditions!');
+                    return false;
+                }
+                return false;
+        };
+        </script>
+    </body>
+</html>
